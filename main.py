@@ -13,7 +13,19 @@ async def on_ready():
 
 @bot.command()
 async def hello(ctx):
-    await ctx.send(f'Hi! I am a bot {bot.user}!')
+    await ctx.send(f'Hi Browh! Welcome to our server! I hope you always enjoy here! {bot.user}!')
+
+@bot.command()
+async def p(ctx):
+    await ctx.send(f'Yo browh! Happy online!!! {bot.user}!')
+
+@bot.command()
+async def off(ctx):
+    await ctx.send(f'Goodbye, have a nice day! {bot.user}!')
+
+@bot.command()
+async def thebotiscool(ctx):
+    await ctx.send(f'Thank you for your complement!')
 
 @bot.command()
 async def heh(ctx, count_heh = 5):
@@ -35,6 +47,12 @@ async def repeat(ctx, times: int, content='repeating...'):
     for i in range(times):
         await ctx.send(content) 
 
+@bot.command()
+async def joined(ctx, member: discord.Member):
+    """Says when a member joined."""
+    await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
 
-bot.run('Silahkan masukkan lah token bot mu') 
+
+bot.run('Silahkan masukkan token mu!')
+
 
