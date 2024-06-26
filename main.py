@@ -1,36 +1,33 @@
+import random 
 import discord
 from discord.ext import commands
-import random
-
-description = '''An example bot to showcase the discord.ext.commands extension
-module.
-
-There are a number of utility commands being showcased here.'''
 
 intents = discord.Intents.default()
-intents.members = True
 intents.message_content = True
 
-bot = commands.Bot(command_prefix='?', description=description, intents=intents)
-
+bot = commands.Bot(command_prefix='$', intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f'Logged in as {bot.user} (ID: {bot.user.id})')
-    print('------')
+    print(f'We have logged in as {bot.user}')
 
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Hi! I am a bot {bot.user}!')
+
+@bot.command()
+async def heh(ctx, count_heh = 5):
+    await ctx.send("he" * count_heh) 
 
 @bot.command()
 async def add(ctx, left: int, right: int):
     """Adds two numbers together."""
-    await ctx.send(left + right)
-
+    await ctx.send(left + right) 
 
 @bot.command(description='For when you wanna settle the score some other way')
 async def choose(ctx, *choices: str):
     """Chooses between multiple choices."""
-    await ctx.send(random.choice(choices))
-
+    await ctx.send(random.choice(choices)) 
 
 @bot.command()
 async def repeat(ctx, times: int, content='repeating...'):
@@ -39,5 +36,5 @@ async def repeat(ctx, times: int, content='repeating...'):
         await ctx.send(content) 
 
 
-bot.run('Masukkan token mu')
+bot.run('Silahkan masukkan lah token bot mu') 
 
