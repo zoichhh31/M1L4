@@ -68,6 +68,10 @@ async def joined(ctx, member: discord.Member):
     await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}, Welcome to this server!!!')
 
 
+
+
+
+
 bot.run('Silahkan masukkan token mu!') 
 
 
