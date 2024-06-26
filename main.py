@@ -36,6 +36,21 @@ async def add(ctx, left: int, right: int):
     """Adds two numbers together."""
     await ctx.send(left + right) 
 
+@bot.command()
+async def multiply(ctx, left: int, right: int):
+    """Times two numbers together."""
+    await ctx.send(left * right) 
+
+@bot.command()
+async def minusleftisbigger(ctx, left: int, right: int):
+    """Minus two numbers together."""
+    await ctx.send(left - right) 
+
+@bot.command()
+async def minusrightisbigger(ctx, left: int, right: int):
+    """Minus two numbers together."""
+    await ctx.send(right - left) 
+
 @bot.command(description='For when you wanna settle the score some other way')
 async def choose(ctx, *choices: str):
     """Chooses between multiple choices."""
@@ -54,5 +69,6 @@ async def joined(ctx, member: discord.Member):
 
 
 bot.run('Silahkan masukkan token mu!') 
+
 
 
