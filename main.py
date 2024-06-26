@@ -70,9 +70,8 @@ async def joined(ctx, member: discord.Member):
 
 
 
-
-
 bot.run('Silahkan masukkan token mu!') 
+
 
 
 
